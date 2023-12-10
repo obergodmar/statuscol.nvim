@@ -172,7 +172,7 @@ local function get_lnum_action(minwid, clicks, button, mods)
   local cargs = callargs[args.mousepos.winid]
   if lnumfunc and cargs.sclnu then
     local placed = f.sign_getplaced(cargs.buf, {group = "*", lnum = args.mousepos.line})
-    if #placed[1].signs > 0 then
+    if placed and #placed[1].signs > 0 then
       get_sign_action_inner(args)
       return
     end
